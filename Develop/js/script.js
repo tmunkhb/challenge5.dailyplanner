@@ -17,3 +17,15 @@ const sevenPm = $("#19pm");
 let hour = moment().hours();
 let userInput;
 let hourSpan;
+
+
+// Date and Hour
+
+let interval = setInterval(function() {
+    let dateNow = moment();
+    $('#currentDay').html(dateNow.format('YYYY MMMM DD') + ' '
+        + dateNow.format('dddd')
+        .substring(0,3).toUpperCase());
+    $('#currentDay').html(currentDate + " " + dateNow.format('hh:mm:ss A'));
+}, 100);
+
