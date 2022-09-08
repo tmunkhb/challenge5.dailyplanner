@@ -83,5 +83,26 @@ function background () {
             $(this).addClass("present");
         }
     });
-  }
+  };
 
+  $(document).ready(function(){
+    initPage()
+    background()
+  
+    // Save Data on localStorage
+    $(".saveBtn").on("click", function(){
+      userInput = $(this).siblings(".form-control").val().trim();
+      console.log(userInput);
+      hourSpan = $(this).siblings(".input-group-prepend").text().trim();
+      console.log(hourSpan);
+      localStorage.setItem(hourSpan, JSON.stringify(userInput));
+  
+    });
+
+    // Reset/Clear Day
+    $("#resetDay").on("click", function(){
+      localStorage.clear();
+      initPage()
+    }) 
+  
+  });
