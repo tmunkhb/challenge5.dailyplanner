@@ -68,3 +68,20 @@ function initPage() {
 
 };
 
+// Color code for past, present, future
+function background () {
+      
+    $(".form-control").each(function () {
+        let timeTest = parseInt($(this).attr("id"));
+        hour = parseInt(hour);
+      
+        if (hour > timeTest) {
+            $(this).addClass("past");
+        } else if (hour < timeTest) {
+            $(this).addClass("future");
+        } else {
+            $(this).addClass("present");
+        }
+    });
+  }
+
